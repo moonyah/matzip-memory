@@ -9,7 +9,7 @@ function App() {
   const [results, setResults] = useState<any[]>([]);
 
   const handleSearch = async () => {
-    const res = await fetch(`/api/places?query=${encodeURIComponent(keyword)}`);
+    const res = await fetch(`/api/search?query=${encodeURIComponent(keyword)}`);
     const data = await res.json();
     setResults(data.results || []);
   };
